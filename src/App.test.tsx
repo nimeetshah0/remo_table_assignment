@@ -5,12 +5,12 @@ const puppeteer = require('puppeteer');
 let browser: any;
 let page: any;
 
-const TEST_RUNS = 1;
+const TEST_RUNS = 50;
 
 const runTheTest = async () => {
   browser = await puppeteer.launch(
     {
-      headless: false // headless mode set to false so browser opens up with visual feedback
+      headless: true // headless mode set to false so browser opens up with visual feedback
     }
   )
   page = await browser.newPage()
@@ -18,7 +18,7 @@ const runTheTest = async () => {
   await page.waitForSelector('#signInAnon');
   await page.click('#signInAnon');
   await page.waitForSelector('.loggedInUser');
-  return page.waitFor(2000)
+  await page.waitFor(2000)
   return browser.close();
 }
 
