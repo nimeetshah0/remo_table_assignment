@@ -31,10 +31,9 @@ export const findNextEmptyTable = (fsTables) => {
         } else if(occupiedSeats.length >= totalSeats.length) {
             continue;
         } else {
-            let emptySeat = _.min(_.difference(totalSeats, occupiedSeats));
-            let emptySeats = totalSeats.length - occupiedSeats.length;
-            if (emptySeats < lowestNumberOfSeats) {
-                lowestNumberOfSeats = emptySeats;
+            if (occupiedSeats.length < lowestNumberOfSeats) {
+                let emptySeat = _.min(_.difference(totalSeats, occupiedSeats));
+                lowestNumberOfSeats = occupiedSeats.length;
                 tableToReturn = {
                     tableId: table.id,
                     seat: emptySeat
