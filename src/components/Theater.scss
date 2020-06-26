@@ -1,14 +1,25 @@
 .remo-theater{
-  margin-left: -378px;
-  margin-top: -300px;
+  // margin-left: -378px;
+  // margin-top: -300px;
+  width: 100%;
+
+  .loggedInUser {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .loggedOut {
+    text-align: center;
+  }
 
   .rt-app-bar {
     text-align: right;
     padding: 1rem;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     box-sizing: border-box;
+    background-color: white;
   }
 
   .rt-rooms {
