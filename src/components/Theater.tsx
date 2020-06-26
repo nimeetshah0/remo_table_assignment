@@ -14,7 +14,6 @@ const Theater: React.FC = () => {
 
   const fs = useFirestore();
   const auth = useSelector((state: RootStateOrAny) => state.firebase.auth);
-  
   const [animate, setAnimate] = useState(false);
 
 
@@ -87,7 +86,7 @@ const Theater: React.FC = () => {
   }
 
 
-  if (auth) {
+  if (auth && !auth.isEmpty) {
     return ( 
       <div className='remo-theater' style={{width: TableConfig.width, height: TableConfig.height}}>
         <div className='rt-app-bar'>
